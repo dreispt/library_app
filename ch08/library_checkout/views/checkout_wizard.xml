@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+
+  <record id="view_form_checkout_wizard" model="ir.ui.view">
+    <field name="name">Library Checkout Books Wizard</field>
+    <field name="model">library.checkout.book</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <field name="search_text" />
+          <button type="object"
+                  name="button_search"
+                  string="Search" />
+          <field name="available_ids" />
+          <button type="object"
+                  name="button_add"
+                  string="Add Books" />
+          <field name="selected_ids" />
+        </group>
+        <footer>
+          <button type="object"
+                  name="button_select"
+                  string="Select Books" />
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <act_window id="action_checkout_wizard"
+    name="Select Books"
+    src_model="library.checkout"
+    res_model="library.checkout.book"
+    view_type="form"
+    view_mode="form"
+    target="new"
+    multi="False"
+    />
+
+  <!--
+  <act_window id="action_book_wizard"
+    name="Select Books"
+    src_model="library.checkout"
+    res_model="library.checkout.book"
+    view_mode="form"
+    target="new"
+    multi="False" />
+    -->
+
+</odoo>
